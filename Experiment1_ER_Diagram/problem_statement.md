@@ -48,25 +48,110 @@ Design a database for patient management, appointments, medical records, and bil
 # ER Diagram Submission - Student Name
 
 ## Scenario Chosen:
-University / Hospital (choose one)
+University Database
 
 ## ER Diagram:
-![ER Diagram](er_diagram.png)
+
+![Screenshot (161)](https://github.com/user-attachments/assets/3d6efac2-a00b-4234-b60e-f9784807d39f)
+
 
 ## Entities and Attributes:
-- Entity1: Attributes
-- Entity2: Attributes
-...
+# Student:
 
+ 1. StudentID (Primary Key)
+    
+ 2. FirstName
+ 
+ 3. Admission no
+    
+ 4. DateOfBirth
+ 
+ 5. Email
+ 
+ 6. PhoneNumber
+  
+ 7. gender
+ 
+ 8. Address
+
+
+# course:
+
+ 1. CourseID (Primary Key)
+   
+ 2. CourseName
+
+ 3.Credits
+
+ 4. DepartmentID
+
+
+# Instructor:
+
+ 1.instructor id
+ 
+ 2.Name
+ 
+ 3.phoneno
+ 
+ 4.department
+ 
+ 5.email
+
+
+
+ # class:
+ 
+ 1.class id
+ 
+ 2.year 
+ 
+ 3.schedule
+ 
+ 4.semester
+ 
+# department:
+ 
+ 1.department id 
+ 
+ 2.department name
+ 
+ 3.head of the department
+ 
 ## Relationships and Constraints:
-- Relationship1 (Cardinality, Participation)
-- Relationship2 (Cardinality, Participation)
-...
+ Student- course:
+ 
+ 1. Relationship-enrollment
+    
+ 2. A student can enroll to many course.
 
+ course-instructor:
+ 
+ 1.relationship "faculty"
+ 
+ 2. instructor can teach one course.
+
+course-department:
+
+1.relationship-"offered"
+
+2. A course isoffered by one department.
+
+3. A department can offer multiple courses.
+
+Class- Course
+
+ 1. "teaches" Relationship
+   
+ 2. A class is based on one course.
+    
+ 3. A course can have multiple classes.
+  
 ## Extension (Prerequisite / Billing):
 - Explain how you modeled prerequisites or billing.
 
 ## Design Choices:
 Brief explanation of why you chose certain entities, relationships, and assumptions
 
-## RESULT
+## RESULT:
+Thus,the Er diagram was suucessfully designed.
