@@ -48,110 +48,89 @@ Design a database for patient management, appointments, medical records, and bil
 # ER Diagram Submission - Student Name
 
 ## Scenario Chosen:
-University Database
+University
 
 ## ER Diagram:
-
-![Screenshot (161)](https://github.com/user-attachments/assets/3d6efac2-a00b-4234-b60e-f9784807d39f)
+![image](https://github.com/user-attachments/assets/43b176a4-1956-47ce-b6ae-5412f2725a7c)
 
 
 ## Entities and Attributes:
-# Student:
+#### 1. DEPARTMENT: 
+Department ID, Department Name
 
- 1. StudentID (Primary Key)
-    
- 2. FirstName
- 
- 3. Admission no
-    
- 4. DateOfBirth
- 
- 5. Email
- 
- 6. PhoneNumber
-  
- 7. gender
- 
- 8. Address
+#### 2. PROGRAM: 
+Program ID, Program Name, Governing Department
 
+#### 3. STUDENT: 
+Admission Number, Name, Email ID, Phone Number, Date of Birth, Age
 
-# course:
+#### 4. COURSES: 
+Course ID, Course Name, Credits, Prerequisites
 
- 1. CourseID (Primary Key)
-   
- 2. CourseName
+#### 5. INSTRUCTOR: 
+Staff ID, Name, Email ID, Phone Number, Date of Birth
+...
 
- 3.Credits
-
- 4. DepartmentID
-
-
-# Instructor:
-
- 1.instructor id
- 
- 2.Name
- 
- 3.phoneno
- 
- 4.department
- 
- 5.email
-
-
-
- # class:
- 
- 1.class id
- 
- 2.year 
- 
- 3.schedule
- 
- 4.semester
- 
-# department:
- 
- 1.department id 
- 
- 2.department name
- 
- 3.head of the department
- 
 ## Relationships and Constraints:
- Student- course:
- 
- 1. Relationship-enrollment
-    
- 2. A student can enroll to many course.
+#### 1. DEPARTMENT offers PROGRAM
 
- course-instructor:
- 
- 1.relationship "faculty"
- 
- 2. instructor can teach one course.
+* _Cardinality_: One-to-Many
 
-course-department:
+* _Participation_: Total (each program belongs to exactly one department)
 
-1.relationship-"offered"
+#### 2. PROGRAM enrolls STUDENT
 
-2. A course isoffered by one department.
+* _Cardinality_: Many-to-Many
 
-3. A department can offer multiple courses.
+* _Participation_: Partial (a student can be enrolled in multiple programs, but not every student belongs to a program)
 
-Class- Course
+#### 3. COURSES catalog PROGRAM
 
- 1. "teaches" Relationship
-   
- 2. A class is based on one course.
-    
- 3. A course can have multiple classes.
-  
-## Extension (Prerequisite / Billing):
-- Explain how you modeled prerequisites or billing.
+* _Cardinality_: Many-to-One
+
+* _Participation_: Total (every course must be associated with a program)
+
+#### 4. STUDENT registers for COURSES
+
+* _Cardinality_: Many-to-Many
+
+* _Participation_: Partial
+
+#### 5. INSTRUCTOR teaches COURSES
+
+* _Cardinality_: Many-to-Many
+
+* _Participation_: Partial
+
+#### 6. COURSES have prerequisites
+
+* _Cardinality_: Many-to-Many
+
+* _Participation_: Partial
+...
+
+## Extension (Prerequisite):
+ * Prerequisites are represented as a self-referencing many-to-many relationship on the COURSES entity. This allows the flexibility to:
+
+   * Define multiple prerequisites for a single course.
+
+   * Assign a single course as a prerequisite to multiple other courses.
+
 
 ## Design Choices:
-Brief explanation of why you chose certain entities, relationships, and assumptions
+1. _Entity Selection_: The entities were chosen to mirror the key components of an academic institution—departments, programs, students, courses, and instructors—to ensure a comprehensive database structure.
 
-## RESULT:
-Thus,the Er diagram was suucessfully designed.
+2. _Relationships_: The relationships were established to represent real-world interactions effectively, like enrollment, teaching, and course prerequisites.
+
+3. _Assumptions_: To maintain consistency:
+
+   * Each program belongs to one department.
+
+   * Each course must belong to a program.
+
+   * Instructors may teach multiple courses and vice versa.
+
+* These design decisions ensure the database is both scalable and adheres to academic institution requirements.
+
+## RESULT
+Thus, to understand and apply the concepts of ER modeling by creating an ER diagram for a real-world application has been done successfully.
